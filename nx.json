@@ -13,9 +13,9 @@
       "!{projectRoot}/src/test-setup.[jt]s",
       "!{projectRoot}/test-setup.[jt]s"
     ],
-    "sharedGlobals": []
+    "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
   },
-  "nxCloudId": "675d7b8a4bbe36106b56ed99",
+  "nxCloudId": "675ed7d4b8ebfd314202bfe2",
   "plugins": [
     {
       "plugin": "@nx/webpack/plugin",
@@ -41,38 +41,27 @@
       "plugin": "@nx/jest/plugin",
       "options": {
         "targetName": "test"
-      },
-      "exclude": ["apps/study-tools-api-e2e/**/*"]
+      }
     }
   ],
   "targetDefaults": {
     "e2e-ci--**/*": {
       "dependsOn": ["^build"]
-    },
-    "@nx/esbuild:esbuild": {
-      "cache": true,
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
-    },
-    "@nx/js:tsc": {
-      "cache": true,
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
     }
   },
   "generators": {
     "@nx/react": {
       "application": {
         "babel": true,
-        "style": "scss",
+        "style": "tailwind",
         "linter": "eslint",
         "bundler": "webpack"
       },
       "component": {
-        "style": "scss"
+        "style": "tailwind"
       },
       "library": {
-        "style": "scss",
+        "style": "tailwind",
         "linter": "eslint"
       }
     }
