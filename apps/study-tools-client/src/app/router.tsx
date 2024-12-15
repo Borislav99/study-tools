@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router';
-import { paths } from './config/paths';
+import { paths } from '../config/paths';
 import { Suspense } from 'react';
 import React from 'react';
 
@@ -10,19 +10,11 @@ export const createAppRouter = () =>
   createBrowserRouter([
     {
       path: paths.home.path,
-      element: (
-        <Suspense fallback={<div>Loading...</div>}>
-          <Landing />
-        </Suspense>
-      ),
+      element: <Landing />,
     },
     {
       path: '*',
-      element: (
-        <Suspense fallback={<div>Loading...</div>}>
-          <NotFound />
-        </Suspense>
-      ),
+      element: <NotFound />,
     },
   ]);
 
