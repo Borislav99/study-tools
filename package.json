@@ -2,7 +2,10 @@
   "name": "@study-tools/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "prepare": "husky install",
+    "commitlint": "commitlint --edit"
+  },
   "private": true,
   "dependencies": {
     "axios": "^1.6.0",
@@ -11,8 +14,11 @@
     "react-dom": "18.3.1"
   },
   "devDependencies": {
+    "husky": "^8.0.0",
     "@babel/core": "^7.14.5",
     "@babel/preset-react": "^7.14.5",
+    "@commitlint/cli": "^18.4.1",
+    "@commitlint/config-conventional": "^18.4.0",
     "@eslint/js": "^9.8.0",
     "@nx/devkit": "20.2.2",
     "@nx/esbuild": "20.2.2",
